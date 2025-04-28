@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer Upgrade</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    .container {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .main-content {
+      flex-grow: 1;
+    }
+
+    .footer {
+      background-color: #222;
+      color: #f1f1f1;
+      text-align: center;
+      padding: 20px;
+      font-size: 1.1rem;
+    }
+
+    .infoLink {
+      background-color: #111;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+    }
+
+    .infoLink a {
+      color: #aaa;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    .infoLink a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="main-content">
+      <!-- Your page content goes here -->
+    </div>
+
+    <div class="footer">
+      A website where you can find your dream place to visit.
+    </div>
+
+    <div class="infoLink">
+      <a href="#">Privacy</a>
+      <a href="#">Terms And Conditions</a>
+    </div>
+  </div>
+</body>
+</html>
