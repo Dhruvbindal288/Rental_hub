@@ -1,0 +1,84 @@
+<% layout("/layouts/boilerplate.ejs")%>
+  <style>
+    #filters {
+      display: flex;
+      margin-top: 1rem ;
+    }
+    .filter{
+      text-align: center;
+      opacity: 0.8;
+      margin-right: 1rem ;
+    }
+    .filter :hover{
+      opacity: 1;
+      cursor: pointer;
+    }
+    .tax-info{
+      display: none;
+      font-size: 0.8rem;
+      color: grey;
+    }
+    .tax-toggle{
+      border: 2px solid lightgrey;
+      border-radius: 10px;
+      height: 3rem;
+      padding: 1rem;
+    }
+  </style>
+<body>
+<div id="filters">
+  <div class="filter">
+    <div><i class="fa-solid fa-fire"></i></div>
+    <p> Trending</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-bed"></i></div>
+    <p> Rooms</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-city"></i></div>
+    <p> Iconic city</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-mountain-sun"></i></div>
+    <p> Mountains</p>
+  </div>
+  <div class="filter">
+    <div><i class="fa-solid fa-tractor"></i></div>
+    <p> Farm</p>
+  </div>
+ <!-- tax box -->
+<div class="tax-toggle ms-auto"><div class="form-check form-switch">
+  <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+  <label class="form-check-label" for="switchCheckDefault">Total after taxes </label>
+</div></div>
+</div>
+   <div class="row row-cols-lg-3 row-cols-lg-2 row-cols-sm-1 mt-3"><% for(let listing of allListings) { %>
+   <a href="/listings/<%= listing._id%>" style="text-decoration:none"> <div class="card col" style="width: 20rem; margin: 1rem;">
+    <img src="<%= listing.image.url %>" class="card-img-top" alt="Listing Image" style="height: 20rem;">
+    <div class="card-body">
+      <p class="card-text">
+         <b><%= listing.title %></b>  <br>
+          <p> ₹ <%= listing.price %>/night <i class="tax-info">+18% GST </i></p> 
+      </p>
+    </div>
+  </div></a>
+   
+  <% } %></div>
+    
+      
+</body>
+
+<script>
+  let taxToggle = document.getElementById("switchCheckDefault");
+  taxToggle.addEventListener('click',()=>{
+ let taxinfo=document.getElementsByClassName("tax-info");
+    for(info of taxinfo){
+      if(taxToggle.checked){
+        info.style.display="block";
+      }else{
+        info.style.display="none";
+      } 
+    }
+  })
+</script>

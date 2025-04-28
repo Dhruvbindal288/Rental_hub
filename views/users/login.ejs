@@ -1,0 +1,23 @@
+<% layout("/layouts/boilerplate.ejs")%>
+<div class="row">
+        <div class="col-8 offset-2">
+<h1>Login on Rental Hub</h1>
+<form action="/login" method="POST" novalidate class="needs-validation">
+    <div>
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" id="username" name="username" class="form-control" required>
+    </div>
+    <div>
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" id="password" name="password" class="form-control" required>
+    </div>
+    <div>
+        <br><br>
+        <button type="submit" class="btn btn-success">Login</button>
+    </div>
+    <br><br>
+    <div>
+        <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+    </div>
+    
+</form>
