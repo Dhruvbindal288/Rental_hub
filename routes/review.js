@@ -4,7 +4,7 @@ const {listingSchema,reviewSchema}=require('../schema.js');
 const Review = require('../models/review.js');
 
 const wrapAsync=require('../utils/wrapAsync.js');
-const ExpressError=require('../utils/ExpressError.js');
+const ExpressError=require('../utils/expressError.js');
 const Listing=require('../models/listing.js');
 
 
